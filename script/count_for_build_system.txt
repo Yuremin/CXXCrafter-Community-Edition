@@ -1,0 +1,17 @@
+repo_link.txt have no build system
+
+count_results:
+Make : 0
+CMake : 0
+Autotools : 0
+Bazel : 0
+Ninja : 0
+MSBuild : 0
+Meson : 0
+Xmake : 0
+Build2 : 0
+Python : 0
+Vcpkg : 0
+Shell : 0
+Scons : 0
+Premake5 : 0

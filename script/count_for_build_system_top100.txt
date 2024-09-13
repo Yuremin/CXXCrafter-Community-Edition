@@ -1,0 +1,119 @@
+treefrog-framework build with:Make CMake Autotools Bazel Meson 
+linux build with:Make Shell 
+clang build with:Make CMake Python Shell 
+srs build with:Make CMake Autotools 
+scylladb build with:Make CMake Bazel Ninja Meson Python Shell 
+xtd build with:Make CMake 
+repo_link.txt have no build system
+Paddle build with:Make CMake Autotools Bazel Meson Python Shell 
+gameplay build with:CMake 
+rocksdb build with:Make CMake 
+OpenRCT2 build with:CMake 
+codon build with:CMake Python 
+libjpeg-turbo build with:CMake Shell 
+audioFlux build with:Make CMake Python Shell 
+wav2letter build with:CMake 
+rpcs3 build with:Make CMake Autotools Bazel Meson Python Shell 
+libvpx build with:Make Autotools 
+aubio build with:Make Python 
+polybar build with:Make CMake Shell 
+qt-creator build with:Make CMake Autotools Bazel Meson Vcpkg Shell 
+theora build with:Make Autotools Scons 
+flameshot build with:Make CMake 
+rnnoise build with:Make Autotools Python 
+rethinkdb build with:Make Autotools 
+simdjson build with:Make CMake 
+irony-mode build with:CMake 
+RmlUi build with:CMake 
+llama.cpp build with:Make CMake Python Shell 
+libsoundio build with:CMake 
+oatpp build with:CMake 
+libfacedetection build with:CMake 
+lwan build with:CMake Shell 
+codeblocks build with:Make Autotools Bazel 
+Stockfish build with:Make 
+shotcut build with:Make CMake 
+cpprestsdk build with:Make CMake Vcpkg Shell Scons 
+emacs-gdb build with:Make 
+llvm-project build with:Make CMake Autotools Bazel Python Shell 
+civetweb build with:Make CMake Shell 
+gcc build with:Make CMake Autotools 
+entt build with:CMake Bazel Shell 
+mold build with:Make CMake Autotools Bazel Meson Python 
+libde265 build with:CMake Autotools 
+codelite build with:Make CMake Autotools Bazel Shell Scons 
+.DS_Store have no build system
+gpt4all build with:Make CMake Python Shell 
+FFmpeg build with:Make Autotools 
+xgboost build with:Make CMake Autotools Shell 
+color_coded build with:Make CMake Autotools 
+mxnet build with:Make CMake Autotools Bazel Meson Python Shell 
+rt-thread build with:Make CMake Xmake Scons 
+soloud build with:CMake 
+mongo build with:Make CMake Autotools Bazel Meson Python Shell Scons 
+elements build with:CMake 
+mozjpeg build with:CMake Shell 
+openpose build with:Make CMake Python Shell 
+kvrocks build with:CMake 
+jucipp build with:CMake Meson 
+x265 build with:Make CMake 
+aseprite build with:Make CMake Autotools Bazel Meson Python Shell 
+arangodb build with:Make CMake Autotools Bazel Meson Python Shell 
+openFrameworks build with:Make CMake Shell 
+MuseScore build with:Make CMake Autotools Bazel Meson Shell 
+LocalAI build with:Make CMake Shell 
+serenity build with:Make CMake 
+leveldb build with:Make CMake Bazel Python 
+userver build with:Make CMake 
+foundationdb build with:CMake 
+nanogui build with:Make CMake Python 
+drogon build with:CMake Shell 
+openalpr build with:CMake Python 
+godot build with:Make CMake Scons 
+filelist have no build system
+mediapipe build with:Make Bazel Python 
+libsndfile build with:CMake Autotools Vcpkg 
+Qv2ray build with:Make CMake Autotools 
+opencv build with:Make CMake Python Shell 
+caffe build with:Make CMake Shell 
+vireo build with:Autotools 
+raylib build with:Make CMake Meson 
+libjxl build with:Make CMake Autotools Bazel Ninja Python Shell 
+openh264 build with:Make Meson 
+cquery build with:Make CMake Autotools Shell 
+guetzli build with:Make Bazel Premake5 
+libui build with:Meson 
+facil.io build with:Make CMake 
+webui build with:Make CMake Shell 
+sqlitebrowser build with:CMake 
+minetest build with:CMake Shell 
+8cc build with:Make 
+cocos2d-x build with:Make CMake Python 
+reactos build with:Make CMake Autotools 
+DearPyGui build with:Make CMake Autotools Python 
+tensorflow build with:Make CMake Autotools Bazel Python Shell 
+sonic-pi build with:Make CMake Autotools Meson Python Shell 
+rtags build with:Make CMake Autotools Shell 
+pistache build with:CMake Meson 
+duckdb build with:Make CMake Python Vcpkg 
+geany build with:Autotools Meson 
+crow build with:Make CMake 
+DOOM build with:Make 
+tesseract build with:Make CMake Autotools Bazel 
+blender build with:Make CMake 
+
+count_results:
+Make : 72
+CMake : 82
+Autotools : 35
+Bazel : 21
+Ninja : 2
+MSBuild : 0
+Meson : 18
+Xmake : 1
+Build2 : 0
+Python : 28
+Vcpkg : 4
+Shell : 37
+Scons : 6
+Premake5 : 1
