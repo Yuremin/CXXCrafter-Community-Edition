@@ -1,10 +1,6 @@
 import openai
 import tiktoken
 
-key_openai = "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"
-key_tongyi='sk-73c5444ab96b4f6c9f14ec59205d6eaa'
-key_deepseek='sk-4438bf6c3a944ea9b6fac813e44d88a5'
-key_glm='d7b987692500a698653106268e60a698.ZndLoNQ9uUoBYZhB'
 
 
 global_input_token_count = 0
