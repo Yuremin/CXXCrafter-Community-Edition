@@ -1,3 +1,12 @@
+**Project Name**: Names of the 75 successfully built CXX projects.  
+**Inclusion of Test Files**: Whether the project's compilation generates test-related files.  
+**Test Commands**: Commands used to execute the tests.  
+**Test Success**: Whether the tests passed successfully.  
+**Basic command functionality test**: Whether the generated binary file can be run with basic commands, such as `--version`, `--help` or `--status`.  
+**Build Output Consistency**: Whether the main executable files are consistent between the automatically and manually built artifacts. 
+
+
+
 | <font style="color:#000000;">Project Name</font> | <font style="color:#000000;">Inclusion of Test files</font> | <font style="color:#000000;">Test Commands</font> | <font style="color:#000000;">Test Success</font> | <font style="color:#000000;">Version Check</font> | <font style="color:#000000;">Build Output Consistency</font> | <font style="color:#000000;">Project Name</font> | <font style="color:#000000;">Inclusion of Test files</font> |
 | --- | :--- | :--- | --- | :--- | --- | --- | :--- |
 | <font style="color:#000000;">GCC</font> | <font style="color:#000000;">No</font> | | | | <font style="color:#000000;">Yes</font> | <font style="color:#000000;">GCC</font> | <font style="color:#000000;">No</font> |
@@ -75,5 +84,4 @@
 | <font style="color:#000000;">rtags</font> | <font style="color:#000000;">No</font> | | | | <font style="color:#000000;">Yes</font> | <font style="color:#000000;">rtags</font> | <font style="color:#000000;">No</font> |
 | <font style="color:#000000;">cquery</font> | <font style="color:#000000;">Yes</font> | <font style="color:#000000;">./build/cquery --test</font> | <font style="color:#000000;">Yes</font> | | <font style="color:#000000;">Yes</font> | <font style="color:#000000;">cquery</font> | <font style="color:#000000;">Yes</font> |
 | <font style="color:#000000;">Irony-mode</font> | <font style="color:#000000;">No</font> | | | <font style="color:#000000;">Yes</font> | <font style="color:#000000;">Yes</font> | <font style="color:#000000;">Irony-mode</font> | <font style="color:#000000;">No</font> |
-
 
