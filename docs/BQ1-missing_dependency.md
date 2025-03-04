@@ -1,6 +1,6 @@
 For the 51 projects that failed to build due to missing dependencies, we searched their documentation for dependency information and compared it with the dependency issues encountered during manual builds. This allowed us to identify the missing dependency information in the project documentation.
 
-We searched for txt or markdown files in the root directory or in the docs, build, compile, and install directories, specifically looking for files with names containing the following keywords: 
+We searched for txt or markdown files in the root directory or in the "docs", "build", "compile", and "install" directories, specifically looking for files with names containing the following keywords: 
 
 + README
 + CONTRIBUTING
@@ -8,9 +8,11 @@ We searched for txt or markdown files in the root directory or in the docs, buil
 + INSTALL
 + BUILDING
 
+Out of the 51 projects, 28 have missing dependencies that are not mentioned in their documentation. 
+
 The names of the 51 projects and missing dependencies in project documentation are listed below.
 
-| Product | Missing Dependency in Project's Documentation |
+| **Projects** | **Missing Dependencies** |
 | --- | --- |
 | gcc |  |
 | codon |  |
@@ -63,4 +65,5 @@ The names of the 51 projects and missing dependencies in project documentation a
 | qt-creator | XKB, WrapVulkanHeaders, libdbus-1 |
 | cquery | libtinfo5 |
 | Irony-mode | libtinfo5 |
+
 
