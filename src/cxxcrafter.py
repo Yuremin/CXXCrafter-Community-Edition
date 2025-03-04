@@ -28,7 +28,9 @@ class CXXCrafter:
         self.logger.info('Parsing Module Starts')
         (self.project_name, 
         self.project_path, 
-        self.environment_requirement, 
+        self.environment_requirement,
+         self.build_system_name,
+         self.entry_file,
         self.potential_dependency, 
         self.docs) = parser(self.project_path)
         self.logger.info('Parsing Module Finishes')
@@ -60,7 +62,7 @@ class CXXCrafter:
 
     def execute_dockerfile(self):
         self.logger.info('Execution Module Starts')
-        flag, error = executor(os.path.dirname(self.dockerfile_path))
+        flag, error = executor(os.path.dirname(self.dockerfile_path), build_system_name=self.build_system_name)
         self.logger.info('Execution Module Finishes')
         return flag, error
 
