@@ -34,5 +34,5 @@ def build_one_repo(repo_path):
 if __name__ == "__main__":
     #run_with_file_list('data/top100/filelist')
     # repo_path = "data/top100/simdjson"
-    repo_path = "data/raylib"
+    repo_path = "data/deepin-anything"
     build_one_repo(repo_path)
