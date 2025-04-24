@@ -1,0 +1,13 @@
+[project]
+name = "CXXCrafter-CE"
+version = "1.0.0"
+description = "An agent for C/C++ project building"
+requires-python = ">=3.9"
+dependencies = [
+    "openai",
+    "tiktoken",
+    "docker",
+    "socksio",
+    "json5",
+    "gitpython"
+]

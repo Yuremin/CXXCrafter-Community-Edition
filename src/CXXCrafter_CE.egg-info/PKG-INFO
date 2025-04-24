@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: CXXCrafter-CE
+Version: 1.0.0
+Summary: An agent for C/C++ project building
+Requires-Python: >=3.9
+Requires-Dist: openai
+Requires-Dist: tiktoken
+Requires-Dist: docker
+Requires-Dist: socksio
+Requires-Dist: json5
+Requires-Dist: gitpython

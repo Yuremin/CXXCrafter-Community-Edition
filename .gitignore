@@ -4,7 +4,6 @@ VENV/
 data*/
 oss-fuzz/
 data/*
-!data
 dockerfile_playground*/
 **/__pycache__
 **/*.pyc
