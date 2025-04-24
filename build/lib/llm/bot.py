@@ -1,7 +1,9 @@
 import openai
 import tiktoken
+import os
 
-
+key_openai = os.getenv("OPENAI_API_KEY")
+base_url_openai = os.getenv("OPENAI_BASE_URL", None)
 
 global_input_token_count = 0
 global_output_token_count = 0
@@ -31,7 +33,10 @@ def token_count_decorator(func):
 class GPTBot:
     def __init__(self, system_prompt=None, model='gpt-4o'):
         self.messages = [{"role": "system", "content": system_prompt}]
-        self.client = openai.OpenAI(api_key=key_openai)
+        if base_url_openai:
+            self.client = openai.OpenAI(api_key=key_openai, base_url=base_url_openai)
+        else:
+            self.client = openai.OpenAI(api_key=key_openai)
         self.model = model
         self.input_token_count = 0
         self.output_token_count = 0

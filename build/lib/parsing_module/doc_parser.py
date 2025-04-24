@@ -1,5 +1,5 @@
 import os,re,sys
-from qdrant_client import QdrantClient
+# from qdrant_client import QdrantClient
 from llm.bot import GPTBot
 from .utils.build_system_parser import extract_json_content
 
@@ -29,27 +29,27 @@ def scan_project_files(directory):
 
 
 
-def similarity_based_match(project_directory):
+# def similarity_based_match(project_directory):
 
-    client = QdrantClient(":memory:")  # or QdrantClient(path="path/to/db")
-    docs, metadata, ids = scan_project_files(project_directory)
+#     client = QdrantClient(":memory:")  # or QdrantClient(path="path/to/db")
+#     docs, metadata, ids = scan_project_files(project_directory)
 
-    # Use the new add method
-    client.add(
-        collection_name="project_files",
-        documents=docs,
-        metadata=metadata,
-        ids=ids
-    )
+#     # Use the new add method
+#     client.add(
+#         collection_name="project_files",
+#         documents=docs,
+#         metadata=metadata,
+#         ids=ids
+#     )
 
-    # Example query
-    search_result = client.query(
-        collection_name="project_files",
-        query_text="Document related to install or building"
-    )
-    print(search_result)
+#     # Example query
+#     search_result = client.query(
+#         collection_name="project_files",
+#         query_text="Document related to install or building"
+#     )
+#     print(search_result)
 
-    return 
+#     return 
 
 def get_helpful_content(files, bot):
     prompt = f"""

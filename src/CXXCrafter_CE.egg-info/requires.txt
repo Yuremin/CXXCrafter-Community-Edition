@@ -4,3 +4,4 @@ docker
 socksio
 json5
 gitpython
+beautifulsoup4

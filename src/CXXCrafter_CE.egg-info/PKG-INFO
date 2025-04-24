@@ -9,3 +9,4 @@ Requires-Dist: docker
 Requires-Dist: socksio
 Requires-Dist: json5
 Requires-Dist: gitpython
+Requires-Dist: beautifulsoup4

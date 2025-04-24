@@ -9,5 +9,6 @@ dependencies = [
     "docker",
     "socksio",
     "json5",
-    "gitpython"
+    "gitpython",
+    "beautifulsoup4"
 ]
