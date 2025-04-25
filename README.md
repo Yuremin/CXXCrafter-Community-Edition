@@ -1,50 +1,83 @@
-# CXXCrafter: A tool designed to automatically build C/C++ projects.
+# **CXXCrafter: An Automated C/C++ Project Build Tool**
 
-CXXCrafter is an automated C/C++ project build tool that leverages the implicit knowledge storage and semantic understanding capabilities of LLMs. Utilizing a RAG framework, it extracts build information from project repositories, generates, and iteratively modifies Dockerfiles to build the project, until a successful build is achieved.
+**CXXCrafter** is an automated build tool for C/C++ projects that leverages the implicit knowledge and semantic understanding capabilities of large language models (LLMs). Powered by a retrieval-augmented generation (RAG) framework, it extracts build-related information from project repositories, then generates and iteratively refines Dockerfiles until the project is successfully built.
 
-- **Multi-Build System Compatibility:** Supports a wide array of mainstream C/C++ build systems and scripts, including Make, CMake, Autotools, Ninja, Meson, Bazel, Xmake, Build2, Vcpkg, Python, and Shell.
-- **Automated Build Entry Detection:** Intelligently identifies the build entry file without manual intervention.
-- **Customizable Build Solutions:** User can specify particular build demands, and CXXCrafter will tailor build plans to meet those needs.
-- **High Success Rate:** Tested on popular GitHub projects, with an overall success rate exceeding 70%, it can effectively overcome numerous challenges encountered in manual builds.
-- **High Throughput Efficiency:**  Capable of handling a large number of projects in parallel.
+### ✨ Key Features
 
-## News
-+ **[2025.04.01]** CXXCrafter has been accepted by FSE(ESEC) 2025. 🎉🎉🎉
+- **Multi-Build System Compatibility:**  
+  Supports a wide range of mainstream C/C++ build systems and scripts, including Make, CMake, Autotools, Ninja, Meson, Bazel, Xmake, Build2, Vcpkg, as well as Python and Shell-based setups.
 
-## Quick Start
-1. Clone the repository:
-```
-git clone https://github.com/Yuremin/CXXCrafter.git
-```
+- **Automated Build Entry Detection:**  
+  Automatically identifies the build entry point without requiring manual configuration.
 
-2. CXXCrafter is written using 大于等于Python 3.9. 
+- **Customizable Build Solutions:**  
+  Users can specify particular build requirements, and CXXCrafter will tailor the build process accordingly.
 
-可以选择使用`uv`等虚拟环境
+- **High Build Success Rate:**  
+  Evaluated on a broad set of popular GitHub repositories, CXXCrafter achieves an overall success rate of over 70%, effectively addressing many challenges of manual builds.
 
-```
-pip install .
-```
+- **High Throughput Efficiency:**  
+  Designed to process large volumes of projects in parallel, significantly improving automation throughput.
 
-## Usage Example
-1. Collect the paths of projects to be built, and save them in a text file, for instance:
-```
-projects/gcc
-projects/8cc
-projects/codon
-projects/mold
-projects/clang
-projects/llvm-project
-projects/emacs-gdb
-...
-```
-2. Run the CXXCrafter script with the text file as an argument:
-```
-cd CXXCrafter
-python3 src/run.py --project_path_list=path_to_your_project_list.txt
-```
-3. Dockerfiles which have implemented a succesful build, will be saved to directory `./build_solution_base`. For build history and logs, refer to `./dockerfile_playground` and `./logs` directories, respectively. 
+---
 
-## Cite
+## 📰 News
+
+- **[2025.04.01]** CXXCrafter has been accepted to **FSE (ESEC) 2025**! 🎉🎉🎉
+
+---
+
+## 🚀 Quick Start
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/Yuremin/CXXCrafter.git
+   ```
+
+2. **Environment setup:**  
+   CXXCrafter requires **Python 3.9 or higher**.  
+   You can optionally use a virtual environment manager like [`uv`](https://github.com/astral-sh/uv):
+
+   ```bash
+   pip install .
+   ```
+
+---
+
+## 📦 Usage Example
+
+1. **Prepare the project list:**  
+   Save the absolute or relative paths of the C/C++ projects you wish to build into a text file, for example:
+
+   ```
+   projects/gcc
+   projects/8cc
+   projects/codon
+   projects/mold
+   projects/clang
+   projects/llvm-project
+   projects/emacs-gdb
+   ...
+   ```
+
+2. **Run CXXCrafter:**
+
+   ```bash
+   cd CXXCrafter
+   python3 src/run.py --project_path_list=path_to_your_project_list.txt
+   ```
+
+3. **Check results:**  
+
+   - Successfully generated Dockerfiles will be stored in `./build_solution_base`.
+   - Build logs and history can be found in `./dockerfile_playground` and `./logs`, respectively.
+
+---
+
+## 📖 Citation
+
+If you use **CXXCrafter** in your work, please cite:
 
 ```bibtex
 @inproceedings{Yu2025CXXCrafter,
@@ -57,12 +90,11 @@ python3 src/run.py --project_path_list=path_to_your_project_list.txt
 }
 ```
 
+---
 
+## 📝 License
 
-## Licenses
+This project is released under the [MIT License](https://lbesson.mit-license.org/).
 
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
-
-This project adheres to the [MIT License](https://lbesson.mit-license.org/).
-
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)  
 [![CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
