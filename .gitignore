@@ -11,3 +11,4 @@ script/*.json
 logs/
 nohup*
 logs*/
+**/.egg-info
