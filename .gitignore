@@ -13,3 +13,5 @@ nohup*
 logs*/
 **/.egg-info
 **/.vscode
+build/
+.venv
