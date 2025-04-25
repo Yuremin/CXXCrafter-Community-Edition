@@ -19,13 +19,9 @@
 - **High Throughput Efficiency:**  
   Designed to process large volumes of projects in parallel, significantly improving automation throughput.
 
----
-
 ## 📰 News
 
 - **[2025.04.01]** CXXCrafter has been accepted to **FSE (ESEC) 2025**! 🎉🎉🎉
-
----
 
 ## 🚀 Quick Start
 
@@ -42,8 +38,6 @@
    ```bash
    pip install .
    ```
-
----
 
 ## 📦 Usage Example
 
@@ -73,8 +67,6 @@
    - Successfully generated Dockerfiles will be stored in `./build_solution_base`.
    - Build logs and history can be found in `./dockerfile_playground` and `./logs`, respectively.
 
----
-
 ## 📖 Citation
 
 If you use **CXXCrafter** in your work, please cite:
@@ -89,8 +81,6 @@ If you use **CXXCrafter** in your work, please cite:
   year={2025}
 }
 ```
-
----
 
 ## 📝 License
 
