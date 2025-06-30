@@ -1,29 +1,19 @@
 # **CXXCrafter: An Automated C/C++ Project Build Tool**
 
-**CXXCrafter** is an automated build tool for C/C++ projects that leverages the implicit knowledge and semantic understanding capabilities of large language models (LLMs). Powered by a retrieval-augmented generation (RAG) framework, it extracts build-related information from project repositories, then generates and iteratively refines Dockerfiles until the project is successfully built.
+**CXXCrafter** is an LLM Agent that automates C/C++ builds by generating and refining Dockerfiles.
 
-### ✨ Key Features
+### Highlights
 
-- **Multi-Build System Compatibility:**  
-  Supports a wide range of mainstream C/C++ build systems and scripts, including Make, CMake, Autotools, Ninja, Meson, Bazel, Xmake, Build2, Vcpkg, as well as Python and Shell-based setups.
+- Supports mainstream C/C++ build systems
+- Auto-detects build entry
+- 70%+ success on real projects
+- High parallel throughput
 
-- **Automated Build Entry Detection:**  
-  Automatically identifies the build entry point without requiring manual configuration.
-
-- **Customizable Build Solutions:**  
-  Users can specify particular build requirements, and CXXCrafter will tailor the build process accordingly.
-
-- **High Build Success Rate:**  
-  Evaluated on a broad set of popular GitHub repositories, CXXCrafter achieves an overall success rate of over 70%, effectively addressing many challenges of manual builds.
-
-- **High Throughput Efficiency:**  
-  Designed to process large volumes of projects in parallel, significantly improving automation throughput.
-
-## 📰 News
+## News
 
 - **[2025.04.01]** CXXCrafter has been accepted to **FSE (ESEC) 2025**! 🎉🎉🎉
 
-## 🚀 Quick Start
+## Quick Start
 
 1. **Clone the repository:**
 
@@ -39,7 +29,7 @@
    pip install .
    ```
 
-## 📦 Usage Example
+## Usage Example
 
 1. **Prepare the project list:**  
    Save the absolute or relative paths of the C/C++ projects you wish to build into a text file, for example:
@@ -67,7 +57,7 @@
    - Successfully generated Dockerfiles will be stored in `./build_solution_base`.
    - Build logs and history can be found in `./dockerfile_playground` and `./logs`, respectively.
 
-## 📖 Citation
+## Citation
 
 If you use **CXXCrafter** in your work, please cite:
 
@@ -82,7 +72,7 @@ If you use **CXXCrafter** in your work, please cite:
 }
 ```
 
-## 📝 License
+## License
 
 This project is released under the [MIT License](https://lbesson.mit-license.org/).
 
