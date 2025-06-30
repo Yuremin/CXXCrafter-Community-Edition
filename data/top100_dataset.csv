@@ -1,4 +1,4 @@
-path,filename
+path,project_name
 https://github.com/gcc-mirror/gcc.git,gcc
 https://github.com/rui314/8cc.git,8cc
 https://github.com/exaloop/seq.git,seq
