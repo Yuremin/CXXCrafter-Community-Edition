@@ -1,7 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "CXXCrafter-CE"
+name = "cxxcrafter"
 version = "1.0.0"
-description = "An agent for C/C++ project building"
+description = "An llm agent for C/C++ project building"
+authors = [
+  { name = "Zhengmin Yu", email = "zmyu23@m.fudan.edu.cn" },
+	{ name = "Yinan Nie", email = "24210240089@m.fudan.edu.cn" }
+]
+readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.9"
 dependencies = [
     "openai",
@@ -12,3 +22,13 @@ dependencies = [
     "gitpython",
     "beautifulsoup4"
 ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
