@@ -2,6 +2,7 @@ import logging, shutil, os
 from .template.prompt_template import get_initial_prompt, prompt_template_for_modification
 from .utils import save_dockerfile, resave_dockerfile, extract_dockerfile_content
 from cxxcrafter.llm.bot import GPTBot
+from cxxcrafter.init import get_playground_dir
 
 
 class DockerfileGenerator:
@@ -46,12 +47,20 @@ class DockerfileGenerator:
         dockerfile_content = self.check_dockerfile(dockerfile_content)
 
         # Create dockerfile playground directory
-        project_dir = f"dockerfile_playground/{self.project_name}"
+        project_dir = os.path.join(get_playground_dir(), self.project_name)
 
         save_dockerfile(project_dir, dockerfile_content)
         self.logger.info('Starting Copying the Repo to Dockerfile_Playground')
         temp = os.path.join(project_dir, self.project_name)
-        if not os.path.exists(temp): shutil.copytree(self.project_path, temp)
+
+        try:
+            if not os.path.exists(temp):
+                shutil.copytree(self.project_path, temp)
+        except Exception as e:
+            self.logger.error(
+                f"Error copying the repo: {e}. Params: self.project_path: {self.project_path}; temp: {temp}")
+            raise e
+
         self.logger.info('Finish Copying')
         self.logger.info('Finish generating the initial dockerfile')
     

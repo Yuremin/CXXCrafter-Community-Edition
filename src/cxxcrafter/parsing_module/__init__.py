@@ -15,7 +15,8 @@ def parser(project_path):
     logger = logging.getLogger(__name__)
 
     if not os.path.exists(project_path):
-        logger.info("Wroing project path!")
+        logger.error(f"Wrong project path: {project_path}")
+        raise FileNotFoundError(f"Wrong project path: {project_path}")
         
     project_name = os.path.basename(project_path)
     environment_requirement, build_system_name, entry_file = extract_environment_requirement(project_path)

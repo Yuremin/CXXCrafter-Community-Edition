@@ -75,14 +75,12 @@ def llm_help_choose_helpful_doc(doc_files, project_name):
         Please select the most relevant documents that are most likely to assist in successfully building the project itself. The output should be formatted as a list like ```json ['document_file1', 'document_file2', ...]```.
         Do not include any additional output.
     """
-    bot = GPTBot(system_prompt, 'gpt-4o')
+    bot = GPTBot(system_prompt)
     response = bot.inference()
     files = eval(extract_json_content(response))
     content = get_helpful_content(files, bot)
     print(content)
     return content
-
-
 
 
 

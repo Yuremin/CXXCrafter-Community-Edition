@@ -5,14 +5,12 @@ import multiprocessing as mp
 
 
 def clone_repo(repo_link, target_dir):
-    """
-    
-    """
+
     repo_link = repo_link.strip()
-    assert repo_link ,"Repo link should not be empty"
+    assert repo_link.startswith("https://github.com"), "Repo link should start with https://github.com"
     pattern = r'https:\/\/github\.com\/([a-zA-Z0-9_\-]+)\/([a-zA-Z0-9_\-\.]+)'
     try:
-        repo_owner, repo_name = re.findall(pattern, repo_link)[0]
+        repo_owner, repo_name = re.findall(pattern, repo_link.rstrip(".git"))[0]
         target_path = os.path.join(target_dir, repo_name)
     except Exception as e:
         with open("NotFound", "a") as f:

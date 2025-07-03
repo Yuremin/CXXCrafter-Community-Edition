@@ -6,7 +6,8 @@ from cxxcrafter.generation_module import DockerfileGenerator, DockerfileModifier
 from cxxcrafter.utils import save_successful_dockerfile
 from cxxcrafter.parsing_module import parser
 from cxxcrafter.execution_module import executor
-from cxxcrafter.init import get_log_dir, get_playground_dir
+from cxxcrafter.init import get_log_dir, get_playground_dir, get_solution_base_dir
+from cxxcrafter.llm.bot import get_sdk_token_counts
 
 
 
@@ -24,6 +25,12 @@ class CXXCrafter:
         setup_logging(self.log_file, self.project_name)
         self.logger = logging.getLogger(__name__)
         self.logger.disabled = False
+
+    def __del__(self):
+        self.logger.info(f"Building process of project <{self.project_name}> ended.\n"
+                         f"Overall input tokens count: {get_sdk_token_counts()[0]}.\n"
+                         f"Overall output tokens count: {get_sdk_token_counts()[1]}.")
+
 
     def parse_project(self):
         self.logger.info('Parsing Module Starts')
@@ -48,7 +55,7 @@ class CXXCrafter:
 
         # Create a directory to store the history
         self.history_dir = os.path.join(os.path.dirname(self.dockerfile_path), f'history-{self.start_time}')
-        os.mkdir(self.history_dir)
+        os.makedirs(self.history_dir)
         log_the_dockerfile(self.dockerfile_path, self.flag_version, self.history_dir)
     
     
@@ -82,7 +89,7 @@ class CXXCrafter:
                     return self.project_name, flag_success
                 self.modify_dockerfile(error_message)
             else:
-                save_successful_dockerfile(self.dockerfile_path, self.project_name, 'build_solution_base')
+                save_successful_dockerfile(self.dockerfile_path, self.project_name, get_solution_base_dir())
                 self.logger.info(f"{self.project_name} is good!")
                 return self.project_name, flag_success
     
