@@ -1,7 +1,42 @@
+import os
 import docker
 import subprocess
 import logging
+import platform
 
+
+def _get_docker_client() -> docker.APIClient:
+    """
+    Return a ready-to-use docker.APIClient based on the current OS.
+    Raises DockerUnavailableError if the Docker service is not available.
+    """
+    system = platform.system()
+    if system == 'Windows':
+        # On Windows, Docker uses a named pipe
+        pipe_path = r'\\.\\pipe\\docker_engine'
+        if not os.path.exists(pipe_path):
+            raise RuntimeError(
+                'Docker named pipe \\\\.\\pipe\\docker_engine not found. '
+                'Ensure Docker Desktop or Docker Engine is installed and running.'
+            )
+        base_url = 'npipe:////./pipe/docker_engine'
+    else:
+        # On Linux and macOS, Docker uses a Unix socket
+        sock_path = '/var/run/docker.sock'
+        if not os.path.exists(sock_path):
+            raise RuntimeError(
+                '/var/run/docker.sock not found. '
+                'Ensure Docker is installed and the daemon is running.'
+            )
+        base_url = 'unix://var/run/docker.sock'
+
+    # Create the client and verify connectivity
+    try:
+        client = docker.APIClient(base_url=base_url)
+        client.ping()
+        return client
+    except Exception as e:
+        raise RuntimeError(f'Docker daemon not available: {e}') from e
 
 
 def build_docker_image(project_dir):
@@ -11,12 +46,11 @@ def build_docker_image(project_dir):
     return True
 
 
-
 def build_docker_image_by_api(project_dir):
 
     logger = logging.getLogger(__name__)
     logger.disabled = False
-    client = docker.APIClient(base_url='unix://var/run/docker.sock')
+    client = _get_docker_client()
     flag_success = True
     try:
         response = client.build(path=project_dir, decode=True)

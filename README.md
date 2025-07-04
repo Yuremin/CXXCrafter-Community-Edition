@@ -18,44 +18,47 @@
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/Yuremin/CXXCrafter.git
+   git clone https://github.com/Yuremin/CXXCrafter-Community-Edition.git
    ```
 
 2. **Environment setup:**  
-   CXXCrafter requires **Python 3.9 or higher**.  
-   You can optionally use a virtual environment manager like [`uv`](https://github.com/astral-sh/uv):
-
-   ```bash
-   pip install .
-   ```
+    CXXCrafter requires **Python 3.9 or higher**. You can optionally use a virtual environment manager like [`uv`](https://github.com/astral-sh/uv).
+   - First, install CXXCrafter as a Python package:
+     ```bash
+     cd CXXCrafter-Community-Edition 
+     pip install .
+     ```
+   - Configure LLM service (i.e., model, base url, and API key) in the [config](src/cxxcrafter/config.py) file or through environment variables.
+   - Start `Docker daemon` on your machine.
 
 ## Usage Example
 
-1. **Prepare the project list:**  
-   Save the absolute or relative paths of the C/C++ projects you wish to build into a text file, for example:
+### Build a single project
+```bash
+python -m cxxcrafter --repo /path/to/your/project
+```
 
-   ```
-   projects/gcc
-   projects/8cc
-   projects/codon
-   projects/mold
-   projects/clang
-   projects/llvm-project
-   projects/emacs-gdb
-   ...
-   ```
+### Build project batch 
 
-2. **Run CXXCrafter:**
+- **Prepare the project list:**  
+ Save the absolute or relative paths of the C/C++ projects you wish to build into a text file, for example:
 
-   ```bash
-   cd CXXCrafter
-   python3 src/run.py --project_path_list=path_to_your_project_list.txt
-   ```
+  ```
+  /path/to/project1
+  /path/to/project2
+  /path/to/project3
+  /path/to/project4
+  ...
+  ```
+- **Run CXXCrafter:**
+  ```bash
+  python -m cxxcrafter --repo-list /path/to/your/repo/list/file
+  ```
 
-3. **Check results:**  
+### Check results
 
-   - Successfully generated Dockerfiles will be stored in `./build_solution_base`.
-   - Build logs and history can be found in `./dockerfile_playground` and `./logs`, respectively.
+   - Successfully generated Dockerfiles will be stored in `~/.cxxcrafter/build_solution_base`.
+   - Build logs and history can be found in `~/.cxxcrafter/dockerfile_playground` and `~/.cxxcrafter/logs`, respectively.
 
 ## Citation
 

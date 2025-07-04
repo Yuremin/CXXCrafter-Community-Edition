@@ -10,7 +10,7 @@ def llm_help_summary_error_message(QA):
         {QA}
     """
 
-    bot = GPTBot(system_prompt, 'gpt-4o')
+    bot = GPTBot(system_prompt)
     response = bot.inference()
 
     #content = eval(extract_json_content(response))

@@ -3,7 +3,10 @@ import multiprocessing as mp
 import argparse
 
 from cxxcrafter import CXXCrafter
-from config import MP_POOL_SIZE
+try:
+    from config import MP_POOL_SIZE
+except Exception as e:
+    MP_POOL_SIZE = 10
 
 
 def run_with_file_list(file_path):
@@ -15,7 +18,6 @@ def run_with_file_list(file_path):
     repos = [item for item in repos if os.path.basename(item) not in built_repos]
     pool = mp.Pool(processes=(MP_POOL_SIZE if isinstance(MP_POOL_SIZE, int) else 10))
     pool.map(build_one_repo, reversed(repos))
-
 
 
 def build_one_repo(repo_path):
