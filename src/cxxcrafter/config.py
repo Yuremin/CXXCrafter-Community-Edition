@@ -1,8 +1,7 @@
 import os
 
 # === Config ===
-CONFIG_LLM_MODEL = "gpt-4o"
-CONFIG_LLM_MODEL = "qwen-plus"
+CONFIG_LLM_MODEL = ""
 CONFIG_API_KEY = ""
 CONFIG_BASE_URL = ""
 
@@ -19,7 +18,7 @@ MP_POOL_SIZE = 10
 LLM_MODEL = CONFIG_LLM_MODEL
 
 if not LLM_MODEL:
-    raise ValueError("LLM_MODEL is not configured. Please specify it in the configuration file.")
+    raise ValueError("LLM_MODEL is not configured. Please specify it in src/cxxcrafter/config.py")
 
 if "gpt" in LLM_MODEL.lower():
     LLM_API_KEY = CONFIG_API_KEY or os.getenv("OPENAI_API_KEY")
@@ -33,10 +32,10 @@ elif "qwen" in LLM_MODEL.lower():
     LLM_BASE_URL = CONFIG_BASE_URL or os.getenv("DASHSCOPE_BASE_URL", "https://dashscope.aliyuncs.com/compatible-mode/v1")
 
 else:
-    raise ValueError(f"Unknown model type for '{LLM_MODEL}'. Please adjust the config logic.")
+    raise ValueError(f"Unknown model type for '{LLM_MODEL}'. CXXCrafter only supports OpenAI, Deepseek or Qwen model series so far.")
 
 if not LLM_API_KEY:
-    raise ValueError(f"API key for '{LLM_MODEL}' is not configured. Please check the config file or environment variables.")
+    raise ValueError(f"API key for '{LLM_MODEL}' is not configured. Please check src/cxxcrafter/config.py or environment variables.")
 
 if not LLM_BASE_URL:
-    raise ValueError(f"Base URL for '{LLM_MODEL}' is not configured. Please check the config file or environment variables.")
+    raise ValueError(f"Base URL for '{LLM_MODEL}' is not configured. Please check src/cxxcrafter/config.py or environment variables.")
