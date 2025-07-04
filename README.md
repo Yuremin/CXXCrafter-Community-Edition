@@ -28,7 +28,8 @@
      cd CXXCrafter-Community-Edition 
      pip install .
      ```
-   - Then, start `Docker daemon` on your machine.
+   - Configure LLM service (i.e., model, base url, and API key) in the [config](src/cxxcrafter/config.py) file or through environment variables.
+   - Start `Docker daemon` on your machine.
 
 ## Usage Example
 
